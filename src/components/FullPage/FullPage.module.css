@@ -1,0 +1,89 @@
+/*TODO: BASE*/
+
+@font-face {
+  font-family: 'Exo';
+  src: url('/public/fonts/Exo2.0-Thin.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Trebuc';
+  src: url('/public/fonts/trebuc.ttf') format('truetype');
+}
+
+:root {
+
+  --font-family: 'Trebuc', sans-serif;
+  --content-width: 1270px;
+  --container-offset: 15px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+
+  --white-color: #FFFFFF;
+  --black-color: #000000;
+}
+
+html {
+  box-sizing: border-box;
+  font-variation-settings: 'wght' 400;
+  font: 14px/1.2 var(--font-family), sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+ol, ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  background: transparent;
+  border: transparent;
+  cursor: pointer;
+}
+
+/*TODO:*/
+
+.fullPage {
+  align-items: center;
+  background: url("../../../public/img/pattern-bg.jpg") repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.features {
+
+}
+
+.featuresList {
+
+}
+
+.title {
+  font-variation-settings: 'wght' 100;
+  font: 36px/44px 'Exo', sans-serif;
+  text-align: center;
+  color: #FFFFFF;
+  text-shadow: 0 1px 1px var(--black-color);
+}
