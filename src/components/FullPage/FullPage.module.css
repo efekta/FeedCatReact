@@ -20,6 +20,7 @@
 
   --white-color: #FFFFFF;
   --black-color: #000000;
+  --blue-color: #1698D9;
 }
 
 html {
@@ -45,6 +46,7 @@ img {
 }
 
 a {
+  color: inherit;
   cursor: pointer;
   text-decoration: none;
 }
@@ -61,6 +63,10 @@ button {
   cursor: pointer;
 }
 
+p, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
 /*TODO:*/
 
 .fullPage {
@@ -70,14 +76,60 @@ button {
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
+  position: relative;
 }
 
-.features {
+.fullPage::after {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 5e-05) 49.88%, rgba(0, 0, 0, 0.5) 100%);
+  content: '';
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.feature {
+  margin: 0 15px;
+  position: relative;
+  z-index: 2;
+}
+
+.featureList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+@media(min-width: 1280px) {
+  .featureList {
+    display: grid;
+    gap: 80px;
+    grid-template-columns: repeat(3, 320px);
+  }
+}
+
+.featureItem {
+  width: 320px;
+}
+
+.featureItem::before {
+  /*content: '';*/
 
 }
 
-.featuresList {
+.featureBottomText {
+  font-variation-settings: 'wght' 400;
+  font: 13px/15px var(--font-family), sans-serif;
+  text-align: center;
+  color: var(--white-color);
+}
 
+.featureLink {
+  border-bottom: 1px dashed var(--blue-color);
+  color: var(--blue-color);
+  display: inline-block;
+  margin-left: 3px;
 }
 
 .title {
@@ -85,5 +137,94 @@ button {
   font: 36px/44px 'Exo', sans-serif;
   text-align: center;
   color: #FFFFFF;
+  margin-bottom: 24px;
   text-shadow: 0 1px 1px var(--black-color);
 }
+
+.card {
+  background: #F2F2F2;
+  border: 4px solid transparent;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  min-height: 480px;
+  overflow: hidden;
+  position: relative;
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 75% 100%, 0 100%, 0% 60%, 0 10%);
+}
+
+.cardPicture {
+  bottom: -35px;
+  left: 0;
+  position: absolute;
+}
+
+
+.blue {
+  border: 4px solid #1698D9;
+}
+
+.pink {
+  border: 4px solid #E52E7A;
+}
+
+.cardTop {
+  padding: 20px 50px;
+}
+
+.cardBottomRight {
+  display: flex;
+  justify-content: flex-end;
+  margin: 15px;
+}
+
+.cardBottom {
+  align-items: center;
+  background: var(--blue-color);
+  border-radius: 50%;
+  color: var(--white-color);
+  display: flex;
+  flex-direction: column;
+  font-variation-settings: 'wght' 400;
+  font: 42px/22px var(--font-family), sans-serif;
+  justify-content: center;
+  height: 80px;
+  padding: 5px;
+  position: relative;
+  width: 80px;
+  z-index: 2;
+}
+
+.cardTopText {
+  color: #666666;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  margin-bottom: 5px;
+}
+
+.cardTitle {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 56px;
+}
+
+.cardSubTitle {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  margin-bottom: 15px;
+}
+
+.cardDesc {
+  color: #666666;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.cardSize {
+  margin-bottom: 6px;
+}
+
